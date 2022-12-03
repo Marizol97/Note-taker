@@ -6,10 +6,10 @@ app.get('/helloworld', (req, res) => {
     res.send('hello world')
   })
 
-  app.post('/', (req, res) => {
+app.post('/', (req, res) => {
     res.send('POST request to the homepage')
-  })
+})
 
-  app.listen(port, () => {
+app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
-  })
+})
