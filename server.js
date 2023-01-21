@@ -2,9 +2,9 @@ const express = require('express')
 const uniqid = require('uniqid')
 const fs = require('fs')
 const allNotes = require('./db.json')
+const PORT = process.env.PORT || 3001;
 
 const app = express()
-const port = 3000
 
 app.use(express.static(__dirname + "/public"))
 app.use(express.json())
