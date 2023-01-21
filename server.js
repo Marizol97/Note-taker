@@ -34,10 +34,14 @@ app.get('/api/notes', function(req, res) {
   res.send(allNotes.notes)
 })
 
+//Route to save new notes
 app.post('/api/notes', function(req, res) {
+  //Get the body of the request, which MUST BE a new note with title and text
   const newNote = req.body
+
   newNote['id'] = uniqid()
   allNotes.notes.push(newNote)
+
   fs.writeFileSync('./db.json',
     JSON.stringify({'notes': allNotes.notes})
   )
@@ -66,5 +70,5 @@ app.delete('/api/notes/:id', function (req, res) {
   JSON.stringify({'notes': allNotes.notes})
 )
 
-res.json(true)
+  res.json(true)
 })
